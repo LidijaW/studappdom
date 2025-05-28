@@ -1,21 +1,34 @@
 <template>
   <div id="app">
+    <NavBar />
     <router-view />
   </div>
 </template>
+
+<script>
+import NavBar from './components/NavbarComponent.vue'
+
+export default {
+  components: {
+    NavBar
+  }
+}
+</script>
 
 <style>
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
+  background-color: rgb(14, 102, 190);
 }
+
 #app {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
 }
+
 button {
   background-color: #007bff;
   color: white;
@@ -24,6 +37,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+
 button:hover {
   background-color: #0056b3;
 }

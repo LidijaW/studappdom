@@ -1,18 +1,30 @@
 <template>
   <div>
-    <h2>Dobrodošli, {{ store.user.email }}</h2>
-    <div class="grid grid-cols-2 gap-4">
-      <ServiceCard title="Obroci" />
-      <ServiceCard title="Prijava kvara" />
-      <ServiceCard title="Rezervacija prostorije" />
-      <ServiceCard title="Plaćanje smještaja" />
+    <h2>Dobrodošao!</h2>
+    <div class="cards">
+      <ServiceCard title="Obroci" link="/meals" />
+      <ServiceCard title="Prijava kvara" link="/report" />
+      <ServiceCard title="Rezervacija prostorije" link="/rooms" />
+      <ServiceCard title="Plaćanje smještaja" link="/payment" />
     </div>
   </div>
 </template>
 
-<script setup>
-import { useUserStore } from '../store/user'
+<script>
 import ServiceCard from '../components/ServiceCard.vue'
 
-const store = useUserStore()
+export default {
+  components: {
+    ServiceCard
+  }
+}
 </script>
+
+<style scoped>
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 20px;
+}
+</style>
